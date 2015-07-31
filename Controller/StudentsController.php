@@ -20,4 +20,19 @@ class StudentsController extends AppController {
 	  endif;
 	}
 
+	public function edit($id = null){
+	  $this->Student->id = $id;
+	  if($this->request->is('get')):
+	    $this->request->data = $this->Student->read();
+	  else:
+	  	if($this->Student->save($this->request->data)):
+          $this->Session->setFlash("It was updated the student with success");
+	  	  $this->redirect(array('action' => 'index'));
+	  	else:
+          $this->Session->setFlash("It wasn't updated the student");
+	  	  $this->redirect(array('action' => 'index'));
+	  	endif;	    
+	  endif;
+	}
+
 }
