@@ -30,8 +30,24 @@ class StudentsController extends AppController {
 	  	  $this->redirect(array('action' => 'index'));
 	  	else:
           $this->Session->setFlash("It wasn't updated the student");
+	  	  $this->request->data = $this->Student->read();
 	  	  $this->redirect(array('action' => 'index'));
-	  	endif;	    
+	  	endif;
+	  endif;
+	}
+
+	public function delete($id){
+	  if($this->request->is('get')):
+	  	$this->Session->setFlash("This Method isn't allowed");
+	  	$this->redirect(array('action' => 'index'));
+	  else:
+	  	if($this->Student->delete($id)):
+	  	  $this->Session->setFlash("It was deleted the student with success");
+	  	  $this->redirect(array('action' => 'index'));
+	    else:
+          $this->Session->setFlash("It wasn't deleted the student");
+	  	  $this->redirect(array('action' => 'index'));
+	    endif;
 	  endif;
 	}
 
