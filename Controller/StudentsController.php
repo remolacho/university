@@ -11,11 +11,11 @@ class StudentsController extends AppController {
     public function add(){
 	  if($this->request->is('post')):
 	  	if($this->Student->save($this->request->data)):
-          $this->Session->setFlash("It was recorded the student with success");
+                    $this->Session->setFlash("It was recorded the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']." with success");
 	  	  $this->redirect(array('action' => 'index'));
 	  	else:
-          $this->Session->setFlash("It wasn't recorded the student");
-	  	  $this->redirect(array('action' => 'index'));
+          $this->Session->setFlash("It wasn't recorded the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']);
+	  	  $this->redirect(array('action' => 'add'));
 	  	endif;
 	  endif;
 	}
@@ -26,10 +26,10 @@ class StudentsController extends AppController {
 	    $this->request->data = $this->Student->read();
 	  else:
 	  	if($this->Student->save($this->request->data)):
-          $this->Session->setFlash("It was updated the student with success");
+          $this->Session->setFlash("It was updated the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']." with success");
 	  	  $this->redirect(array('action' => 'index'));
 	  	else:
-          $this->Session->setFlash("It wasn't updated the student");
+          $this->Session->setFlash("It wasn't updated the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']);
 	  	  $this->request->data = $this->Student->read();
 	  	  $this->redirect(array('action' => 'index'));
 	  	endif;
@@ -42,10 +42,10 @@ class StudentsController extends AppController {
 	  	$this->redirect(array('action' => 'index'));
 	  else:
 	  	if($this->Student->delete($id)):
-	  	  $this->Session->setFlash("It was deleted the student with success");
+	  	  $this->Session->setFlash("It was deleted the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']." with success");
 	  	  $this->redirect(array('action' => 'index'));
 	    else:
-          $this->Session->setFlash("It wasn't deleted the student");
+          $this->Session->setFlash("It wasn't deleted the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']);
 	  	  $this->redirect(array('action' => 'index'));
 	    endif;
 	  endif;
