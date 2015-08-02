@@ -1,8 +1,7 @@
-<h1>Edit Student</h1>
+<h1><?php echo $this->Html->link('Index', array('action' => 'index')); ?> | Edit Student
+</h1>
 <?php
-    echo '<pre>';
     //print_r($invalidFields);
-    echo '</pre>';
     echo $this->Form->create("Student", array('action' => 'edit'));
 	echo $this->Form->label("document_identity");
 	echo $this->Form->imput("document_identity");

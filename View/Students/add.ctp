@@ -1,4 +1,4 @@
-<h1>Add Student</h1>
+<h1><?php echo $this->Html->link('Index', array('action' => 'index')); ?> | Add Student</h1>
 <?php
 	echo $this->Form->create("Student", array('action' => 'add'));
 	echo $this->Form->label("document_identity");
