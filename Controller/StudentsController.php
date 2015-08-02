@@ -21,6 +21,10 @@ class StudentsController extends AppController {
 	}
 
 	public function edit($id = null){
+	  if (!$id):
+        $this->Session->setFlash("This Method isn't allowed");
+	  	return $this->redirect(array('action' => 'index'));
+      endif;
 	  $this->Student->id = $id;
 	  if($this->request->is('get')):
 	    $this->request->data = $this->Student->read();
