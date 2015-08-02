@@ -11,7 +11,7 @@ class StudentsController extends AppController {
     public function add(){
 	  if($this->request->is('post')):
 	  	if($this->Student->save($this->request->data)):
-                    $this->Session->setFlash("It was recorded the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']." with success");
+          $this->Session->setFlash("It was recorded the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']." with success");
 	  	  $this->redirect(array('action' => 'index'));
 	  	else:
           $this->Session->setFlash("It wasn't recorded the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']);
@@ -42,7 +42,7 @@ class StudentsController extends AppController {
 	  	$this->redirect(array('action' => 'index'));
 	  else:
 	  	if($this->Student->delete($id)):
-	  	  $this->Session->setFlash("It was deleted the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']." with success");
+	  	  $this->Session->setFlash("It was deleted the student with success");
 	  	  $this->redirect(array('action' => 'index'));
 	    else:
           $this->Session->setFlash("It wasn't deleted the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']);
