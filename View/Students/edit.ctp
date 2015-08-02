@@ -2,7 +2,7 @@
 </h1>
 <?php
     //print_r($invalidFields);
-    echo $this->Form->create("Student", array('action' => 'edit'));
+    echo $this->Form->create("Student", array('action' => 'update'));
 	echo $this->Form->label("document_identity");
 	echo $this->Form->imput("document_identity");
 	echo $this->Form->label("name");
