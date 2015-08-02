@@ -31,7 +31,7 @@ class StudentsController extends AppController {
 	  	else:
           $this->Session->setFlash("It wasn't updated the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']);
 	  	  $this->request->data = $this->Student->read();
-	  	  $this->redirect(array('action' => 'index'));
+	  	  $this->redirect(array('action' => 'edit',$this->Student->id));
 	  	endif;
 	  endif;
 	}
