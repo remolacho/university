@@ -1,4 +1,4 @@
-<?php echo $this->element('Flash/error');?>
+<?php echo $this->element('Flash/obj_error');?>
 <h1><?php echo $this->Html->link('Index', array('action' => 'index')); ?> | Edit Student
 </h1>
 <?php
