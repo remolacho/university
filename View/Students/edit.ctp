@@ -1,7 +1,7 @@
+<?php echo $this->element('Flash/error');?>
 <h1><?php echo $this->Html->link('Index', array('action' => 'index')); ?> | Edit Student
 </h1>
 <?php
-    //print_r($invalidFields);
     echo $this->Form->create("Student", array('action' => 'edit'));
 	echo $this->Form->label("document_identity");
 	echo $this->Form->imput("document_identity", array('type' => 'number'));

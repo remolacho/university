@@ -1,3 +1,4 @@
+<?php echo $this->element('Flash/error');?>
 <h1><?php echo $this->Html->link('Index', array('action' => 'index')); ?> | Add Student</h1>
 <?php
   echo $this->Form->create("Student", array('action' => 'add'));
