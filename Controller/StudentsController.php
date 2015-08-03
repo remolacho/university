@@ -1,7 +1,5 @@
 <?php
 class StudentsController extends AppController {
-	public $helpers    = array('Html','Form');
-	public $components = array('session');
 
 	public function index(){
 	  $condition = array('order' => 'name');
