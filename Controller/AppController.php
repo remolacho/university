@@ -24,4 +24,12 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	public $helpers    = array('Html','Form');
 	public $components = array('Session','Cookie');
+
+	public function _errors_messages($obj = null){
+	   if (!$obj):
+	   	 $this->set("invalidFields",array());
+	   else:	
+         $this->set("invalidFields",$obj->validationErrors);
+	   endif;
+	}
 }

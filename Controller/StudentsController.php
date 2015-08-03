@@ -7,7 +7,7 @@ class StudentsController extends AppController {
 	}
 
     public function add(){
-      $this->set("invalidFields",array());
+      $this->_errors_messages();
 	  if($this->request->is('post')):
 	  	$student = $this->request->data;
 	  	if($this->Student->save($this->request->data)):
@@ -15,7 +15,7 @@ class StudentsController extends AppController {
 	  	  $this->redirect(array('action' => 'index'));
 	  	else:
 	  	  $this->request->data = $student;
-	  	  $this->set("invalidFields",$this->Student->validationErrors);
+	  	  $this->_errors_messages($this->Student);
           $this->Session->setFlash("It wasn't recorded the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']);
 	  	endif;
 	  endif;
@@ -32,14 +32,14 @@ class StudentsController extends AppController {
 	  	  return $this->redirect(array('action' => 'add'));
 	    else:
 	      if($this->request->is('get')):
-	      	$this->set("invalidFields",array());
+	      	$this->_errors_messages();
 	        $this->request->data = $student;
 	      else:
  	  	    if($this->Student->save($this->request->data)):
               $this->Session->setFlash("It was updated the student ".$this->request->data['Student']['name']." ".$this->request->data['Student']['last_name']." with success");
 	  	      return $this->redirect(array('action' => 'index'));
 	  	    else:
-	          $this->set("invalidFields",$this->Student->validationErrors);
+	  	      $this->_errors_messages($this->Student);
               $this->Session->setFlash("It wasn't updated the student ");
 	  	    endif;
 	      endif;
@@ -49,7 +49,7 @@ class StudentsController extends AppController {
 
 	public function delete($id){
 	  if($this->request->is('get')):
-	  	$this->Session->setFlash("This Method isn't allowed");
+	  	$this->Session->setFlash(__("This Method isn't allowed"));
 	  	$this->redirect(array('action' => 'index'));
 	  else:
 	  	if($this->Student->delete($id)):
