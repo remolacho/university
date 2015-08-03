@@ -16,6 +16,6 @@ class Student extends AppModel {
 	                         	                          'maxlength'    => array('rule' => array('maxLength', '50'),  'message' => 'Maximum 50 characters'),
 						  			                      'notblank'     => array('rule' => 'notBlank',                'message' => "The Email can't be empty!!!!!" ),
 						  			                      'isunique'     => array('rule' => 'isUnique',                'message' => "The email already was added")),
-	                         //'phone'             => array('phone'        => array('rule' => array('phone', null, 'us'),'message' => "The phone's format is wrong"))
+	                         'phone'             => array('phone'        => array('rule' => array('phone', null, 'us'),'message' => "The phone's format is wrong"))
 	                        );
 }
