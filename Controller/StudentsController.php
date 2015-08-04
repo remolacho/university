@@ -1,9 +1,10 @@
 <?php
 class StudentsController extends AppController {
-
+    public $paginate = array('limit' => '10', 'order' => array('Student.name' => 'asc'));
+	
 	public function index(){
-	  $condition = array('order' => 'name');
-      $this->set("students", $this->Student->find("all",$condition));
+      $this->Student->recursive = 0;
+      $this->set("students", $this->paginate());
 	}
 
     public function add(){

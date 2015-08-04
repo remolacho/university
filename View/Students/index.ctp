@@ -1,15 +1,14 @@
-<h1>students' list <?php echo $this->Html->link('Add', array('action' => 'add'));?></th></h1>
-<pre>
+<h1>students' list <?php echo $this->Html->link('Add', array('action' => 'add'));?></h1>
 <table>
 	<tbody>
-		<th>Id</th>
-		<th>Document Identity</th>
-		<th>Name</th>
-		<th>Last Name</th>
-		<th>Email</th>
-		<th>Age</th>
-		<th>Phone</th>
-		<th>Address</th>
+		  <th><?php echo $this->Paginator->sort('id');?></th>
+		  <th><?php echo $this->Paginator->sort('document_identity');?></th>
+		  <th><?php echo $this->Paginator->sort('name');?></th>
+		  <th><?php echo $this->Paginator->sort('last_name');?></th>
+		  <th><?php echo $this->Paginator->sort('email');?></th>
+		  <th><?php echo $this->Paginator->sort('age');?></th>
+		  <th><?php echo $this->Paginator->sort('phone');?></th>
+		  <th><?php echo $this->Paginator->sort('address');?></th>
 		<th>Actions</th>
 		<?php foreach ($students as $student):?>
       	  <tr>
@@ -28,4 +27,4 @@
 	    <?php endforeach;?>
 	</tbody>
 </table>
-</pre>
+<?php echo $this->element('paginator');?>
