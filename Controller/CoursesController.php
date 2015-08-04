@@ -5,7 +5,7 @@ class CoursesController extends AppController {
 
 	public function index(){
 	  $this->Course->recursive = 0;
-      $this->set("courses", $this->pagintate());
+      $this->set("courses", $this->paginate());
 	}
 
 	public function add(){
@@ -21,7 +21,8 @@ class CoursesController extends AppController {
           	$this->Session->setFlash("It wasn't recorded the course ".$this->request->data['Course']['name']);
 	  	endif;
 	   endif;
-	   $this->set("teachers", $this->Course->Teacher->find("list"));
+	   $teachers = $this->Course->Teacher->find("list");
+       $students = $this->Course->Student->find("list");
+	   $this->set(compact("teachers","students"));
 	}
-
 }

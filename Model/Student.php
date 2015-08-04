@@ -2,7 +2,7 @@
 
 class Student extends AppModel {
 	
-	public $hasAndBelongsToMany = array('course' => array('className'  => 'Course',
+	public $hasAndBelongsToMany = array('Course' => array('className'  => 'Course',
 	                                                      'joinTable'  => 'courses_students',
 	                                                      'foreingKey' => 'student_id', 
 	                                                      'associationForeingKey' => 'course_id' ));

@@ -2,7 +2,7 @@
 
 class Teacher extends AppModel {
 	public $displayField = 'name';
-	public $hasMany      = array('course' => array('className' => 'Course', 'foreingKey' => 'teacher_id', 'dependent' => true));
+	public $hasMany      = array('Course' => array('className' => 'Course', 'foreingKey' => 'teacher_id', 'dependent' => true));
 	public $validate = array('name'              => array('maxlength' => array('rule' => array('maxLength', '20'),  'message' => 'Maximum 20 characters'),
 						  			                      'notblank'  => array('rule' => 'notBlank',                'message' => "The name can't be empty!!!!!" )),   
 	                         'last_name'         => array('maxlength' => array('rule' => array('maxLength', '20'),  'message' => 'Maximum 20 characters'),
