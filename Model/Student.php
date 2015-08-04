@@ -1,6 +1,12 @@
 <?php
 
 class Student extends AppModel {
+	
+	public $hasAndBelongsToMany = array('course' => array('className'  => 'Course',
+	                                                      'joinTable'  => 'courses_students',
+	                                                      'foreingKey' => 'student_id', 
+	                                                      'associationForeingKey' => 'course_id' ));
+
 	public $validate = array('name'              => array('maxlength' => array('rule' => array('maxLength', '20'),  'message' => 'Maximum 20 characters'),
 						  			                      'notblank'  => array('rule' => 'notBlank',                'message' => "The name can't be empty!!!!!" )),   
 	                         'last_name'         => array('maxlength' => array('rule' => array('maxLength', '20'),  'message' => 'Maximum 20 characters'),
