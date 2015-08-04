@@ -53,7 +53,7 @@ class TeachersController extends AppController {
 	  	$this->Session->setFlash(__("This Method isn't allowed"));
 	  	$this->redirect(array('action' => 'index'));
 	  else:
-	  	if($this->Student->delete($id)):
+	  	if($this->Teacher->delete($id)):
 	  	  $this->Session->setFlash("It was deleted the Teacher with success");
 	  	  $this->redirect(array('action' => 'index'));
 	    else:
