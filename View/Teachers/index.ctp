@@ -1,5 +1,4 @@
 <h1>Teachers' list <?php echo $this->Html->link('Add', array('action' => 'add'));?></th></h1>
-<pre>
 <table>
 	<tbody>
 	    <tr>
@@ -10,18 +9,18 @@
 		  <th><?php echo $this->Paginator->sort('email');?></th>
 		  <th><?php echo $this->Paginator->sort('phone');?></th>
 		  <th><?php echo $this->Paginator->sort('address');?></th>
-        </tr> 		
+        </tr>
 		<?php foreach ($teachers as $teacher):?>
       	  <tr>
-	      	  <td><?php echo $teacher['Teacher']['id']; ?></td>
-	      	  <td><?php echo $teacher['Teacher']['document_identity']; ?></td>
-			  <td><?php echo $teacher['Teacher']['name']; ?></td>
-			  <td><?php echo $teacher['Teacher']['last_name']; ?></td>
-			  <td><?php echo $teacher['Teacher']['email']; ?></td>
-			  <td><?php echo $teacher['Teacher']['phone']; ?></td>
-			  <td><?php echo $teacher['Teacher']['address']; ?></td>	  
+	      	  <td><?php echo h($teacher['Teacher']['id']); ?></td>
+	      	  <td><?php echo h($teacher['Teacher']['document_identity']); ?></td>
+			  <td><?php echo h($teacher['Teacher']['name']); ?></td>
+			  <td><?php echo h($teacher['Teacher']['last_name']); ?></td>
+			  <td><?php echo h($teacher['Teacher']['email']); ?></td>
+			  <td><?php echo h($teacher['Teacher']['phone']); ?></td>
+			  <td><?php echo h($teacher['Teacher']['address']); ?></td>
 	      </tr>
 	    <?php endforeach;?>
 	</tbody>
 </table>
-</pre>
+<?php echo $this->element('paginator');?>

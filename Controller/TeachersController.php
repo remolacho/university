@@ -1,5 +1,7 @@
 <?php
 class TeachersController extends AppController {
+	public $paginate = array('limit' => '10', 'order' => array('Teacher.id' => 'asc'));
+	
 	public function index(){
 	  $this->Teacher->recursive = 0;
       $this->set("teachers", $this->paginate());
