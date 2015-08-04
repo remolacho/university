@@ -1,4 +1,4 @@
-<h1>Courses' list <?php echo $this->Html->link('Add', array('action' => 'add'));?></h1>
+<h1><?php echo $this->Html->link("Index", array('controller' => 'pages', 'action' => 'index')); ?> | Courses' list <?php echo $this->Html->link('Add', array('action' => 'add'));?></h1>
 <div class="index">
   <table>
 	<tbody>
@@ -12,8 +12,8 @@
         	<tr>
         	  <td><?php echo h($course['Course']['id']); ?></td>
 	      	  <td><?php echo h($course['Course']['name']); ?></td>
-			  <td><?php echo h($course['Teacher']['name']); ?></td>
-			  <td><?php echo $this->Html->link('View', array('action' => 'show',$course['Course']['id']));?>
+			  <td><?php echo $this->Html->link($course['Teacher']['name'], array('controller' => 'teachers', 'action' => 'view',$course['Course']['id']));?></td>
+			  <td><?php echo $this->Html->link('View', array('action' => 'view',$course['Course']['id']));?>
 			      <?php echo $this->Html->link('Edit', array('action' => 'edit',$course['Course']['id']));?>
 			      <?php echo $this->Form->postLink('Delete', array('action' => 'delete',$course['Course']['id']), array('confirm' => 'Are you sure of delete to '.$course['Course']['name'].'?'));?>
 			  </td>

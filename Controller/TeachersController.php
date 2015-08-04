@@ -48,6 +48,20 @@ class TeachersController extends AppController {
       endif;
 	}
 
+	public function view($id = null){
+	  if (!$id):
+        $this->Session->setFlash("This Method isn't allowed, you can add a new teacher");
+	  	return $this->redirect(array('action' => 'add'));
+      else:
+      	if($this->request->is('get')):
+      	  $this->set("teacher", $this->Teacher->findById($id));
+      	else:
+      	  $this->Session->setFlash("This Method isn't allowed, you can add a new teacher");
+	  	  return $this->redirect(array('action' => 'add'));	
+      	endif;
+      endif;		
+	}
+
 	public function delete($id){
 	  if($this->request->is('get')):
 	  	$this->Session->setFlash(__("This Method isn't allowed"));

@@ -1,5 +1,5 @@
 <?php echo $this->element('Flash/obj_error');?>
-<legend><?php echo $this->Html->link('Index', array('action' => 'index')); ?> | Add Student</legend>
+<legend><?php echo $this->Html->link("Teachers' List", array('action' => 'index')); ?> | Add Student</legend>
 <div class='add'>
   <?php echo $this->Form->create("Teacher", array('action' => 'add'));?>
   <fieldset>

@@ -1,5 +1,5 @@
 <?php echo $this->element('Flash/obj_error');?>
-<h1><?php echo $this->Html->link('Index', array('action' => 'index')); ?> | Edit Student
+<h1><?php echo $this->Html->link("Teachers' List", array('action' => 'index')); ?> | Edit Student
 </h1>
 <div class="edit">
 	<?php

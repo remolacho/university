@@ -1,5 +1,5 @@
 <?php echo $this->element('Flash/obj_error');?>
-<h1><?php echo $this->Html->link('Index', array('action' => 'index')); ?> | Add Course</h1>
+<h1><?php echo $this->Html->link("Courses' List", array('action' => 'index')); ?> | Add Course</h1>
 <div class="add">
 	<?php
 	  echo $this->Form->create("Course", array('action' => 'add'));

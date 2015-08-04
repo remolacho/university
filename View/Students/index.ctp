@@ -1,4 +1,4 @@
-<h1>students' list <?php echo $this->Html->link('Add', array('action' => 'add'));?></h1>
+<h1><?php echo $this->Html->link("Index", array('controller' => 'pages', 'action' => 'index')); ?> | Students' list <?php echo $this->Html->link('Add', array('action' => 'add'));?></h1>
 <div class="index">
 	<table>
 		<tbody>
