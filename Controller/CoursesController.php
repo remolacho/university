@@ -1,0 +1,24 @@
+<?php
+class CoursesController extends AppController {
+	public function index(){
+	  $this->Course->recursive = 0;
+      $this->set("courses", $this->pagintate());
+	}
+
+	public function add(){
+	   $this->_errors_messages();
+	   if($this->request->is('post')):
+         $course = $this->request->data;
+         if($this->Course->save($this->request->data)):
+			$this->Session->setFlash("It was recorded the course ".$this->request->data['Course']['name']." with success");
+	  	  	$this->redirect(array('action' => 'index'));
+	  	else:
+	  	  	$this->request->data = $course;
+	  	  	$this->_errors_messages($this->Course);
+          	$this->Session->setFlash("It wasn't recorded the course ".$this->request->data['Course']['name']);
+	  	endif;
+	   endif;
+	   $this->set("teachers", $this->Course->Teacher->find("list"));
+	}
+
+}
