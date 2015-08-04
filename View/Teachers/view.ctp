@@ -6,9 +6,9 @@
 <?php echo $this->Form->label("Last Name: ".$teacher["Teacher"]["last_name"]); ?>
 <?php echo $this->Form->label("Phone: ".$teacher["Teacher"]["phone"]); ?>
 <?php echo $this->Form->label("Address: ".$teacher["Teacher"]["address"]); ?>
-<pre>
-<?php echo $this->Form->label("CV:"); ?>
-<?php echo $this->Form->label($teacher["Teacher"]["cv"]); ?>
-</pre>
+</p>
+<p>
+  <?php echo $this->Form->label("CV:"); ?>
+  <?php echo $teacher["Teacher"]["cv"]; ?>
 </p>
 <h1><?php echo $this->Html->link('Edit', array('action' => 'edit',$teacher['Teacher']['id']));?></h1>
