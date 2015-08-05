@@ -17,9 +17,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css(array('cake.generic','fonts',
-			                        'font-awesome'));
-		echo $this->Html->script(array('jquery-2.1.4.min.js'                           ,'masks','format','bootstrap'));
+		echo $this->Html->css(array('cake.generic'));
+		echo $this->Html->script(array('jquery-2.1.4.min.js'                           ,'masks','format','bootstrap.min'));
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
