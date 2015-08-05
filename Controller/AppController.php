@@ -25,7 +25,6 @@ class AppController extends Controller {
 	
 	public $helpers       = array('Html','Form');
 	public $components    = array('Session','Cookie');
-	public $layout        = 'home';
 	
 	public function _errors_messages($obj = null){
 	   if (!$obj):
