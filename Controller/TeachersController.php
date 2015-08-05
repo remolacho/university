@@ -59,7 +59,7 @@ class TeachersController extends AppController {
       	  $this->Session->setFlash("This Method isn't allowed, you can add a new teacher");
 	  	  return $this->redirect(array('action' => 'add'));	
       	endif;
-      endif;		
+      endif;
 	}
 
 	public function delete($id){
