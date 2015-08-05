@@ -9,7 +9,7 @@
     echo $this->Form->imput("last_name", array('placeHolder' => 'Last Name'));
     echo $this->Form->imput("email", array('type' => 'email','placeHolder' => 'Email'));
     echo $this->Form->imput("age", array('type' => 'number','placeHolder' => 'Age'));
-    echo $this->Form->imput("phone", array('placeHolder' => 'Phone'));	
+    echo $this->Form->imput("phone", array('placeHolder' => 'Phone', 'class' => 'phone_us'));
     echo $this->Form->imput("address", array('placeHolder' => 'Address'));
     echo $this->Form->end("Save");
   ?>

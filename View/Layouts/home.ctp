@@ -7,7 +7,8 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css(array('bootstrap','fonts','font-awesome'));
+		echo $this->Html->script(array('jquery-2.1.4.min.js'                           ,'masks','format','bootstrap'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -15,9 +16,9 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">
+		<div id="header" class='col-12-md'>
 		</div>
-		<div id="content">
+		<div id="content" class="container">
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>
