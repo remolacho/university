@@ -5,9 +5,9 @@
   <fieldset>
   <?php
     echo $this->Form->imput("document_identity", array('
-    type' => 'number', 'placeHolder' => 'Document Identity'));
-    echo $this->Form->imput("name", array('placeHolder' => 'First Name'));
-    echo $this->Form->imput("last_name", array('placeHolder' => 'Last Name'));
+    type' => 'number', 'placeHolder' => 'Document Identity', 'class' => 'numeric_di'));
+    echo $this->Form->imput("name", array('placeHolder' => 'First Name', 'class' => 'alphanumeric'));
+    echo $this->Form->imput("last_name", array('placeHolder' => 'Last Name', 'class' => 'alphanumeric'));
     echo $this->Form->imput("email", array('type' => 'email','placeHolder' => 'Email'));
     echo $this->Form->imput("phone", array('placeHolder' => 'Phone', 'class' => 'phone_us'));	
     echo $this->Form->imput("address", array('placeHolder' => 'Address'));

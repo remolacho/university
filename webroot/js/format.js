@@ -7,10 +7,10 @@ $(function() {
 	$('.numeric_mask').mask("00000", {reverse: true, maxlength: 5});
 	$('.streetNumber_mask').mask("000000000", {reverse: true, maxlength: 8});
 	$('.year_mask').mask("0000", {reverse: true, maxlength: 4});
-	$('.numeric_ws').mask("00", {reverse: true, maxlength: 2});
-	$('.numbers').mask("0",{placeholder:" "});
+	$('.numeric_di').mask("00000000000", {reverse: true, maxlength: 11});
+	$('.numeric_age').mask("000",{reverse: true, maxlength: 3});
 	$('.date').mask('99/99/9999');
 	$('.boolean').mask('B', {translation: {'B': {pattern: /^[YynN]*$/, optional: true}}});
-	$('.alphanumeric').mask('AAAAAAAAAAAAAA', {translation: {'AAAAAAAAAAAAAA': {pattern: /^[0-9a-zA-Z]+$/, optional: true}}});
+	$('.alphanumeric').mask('AAAAAAAAAAAAAAAAAAA', {translation: {'AAAAAAAAAAAAAAAAAAA': {pattern: /^[0-9a-zA-Z]+$/, optional: true}}});
 	$(".decimal").mask("0.0",{placeholder:" "});
 });
