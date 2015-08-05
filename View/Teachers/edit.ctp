@@ -1,7 +1,7 @@
 <?php echo $this->element('Flash/obj_error');?>
 <h1><?php echo $this->Html->link("Teachers' List", array('action' => 'index')); ?> | Edit Student
 </h1>
-<div class="edit">
+<div>
 	<?php
 	    echo $this->Form->create("Teacher", array('action' => 'edit'));
 		echo $this->Form->label("document_identity");
@@ -13,7 +13,7 @@
 		echo $this->Form->label("email");
 		echo $this->Form->imput("email", array('type' => 'email'));
 	    echo $this->Form->label("phone");
-		echo $this->Form->imput("phone");
+		echo $this->Form->imput("phone", array('class' => 'phone_us'));
 		echo $this->Form->label("address");
 		echo $this->Form->imput("address");
 		echo $this->Form->label("cv");

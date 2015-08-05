@@ -1,5 +1,5 @@
 <h1><?php echo $this->Html->link("Index", array('controller' => 'pages', 'action' => 'index')); ?> | Students' list <?php echo $this->Html->link('Add', array('action' => 'add'));?></h1>
-<div class="index">
+<div>
 	<table>
 		<tbody>
 			  <th><?php echo $this->Paginator->sort('id');?></th>

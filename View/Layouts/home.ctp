@@ -7,7 +7,8 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css(array('bootstrap','fonts','font-awesome'));
+		echo $this->Html->css(array('bootstrap','fonts',
+			                        'font-awesome'));
 		echo $this->Html->script(array('jquery-2.1.4.min.js'                           ,'masks','format','bootstrap'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
