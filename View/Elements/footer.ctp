@@ -1,5 +1,9 @@
 <div id="footer" class="container">
   <div>
-    <p><a href="">Jonathan Rojas</a></p>
+    <p class="pull-right">
+      <a href="#"><image src='/university/img/net/facebook2.png'></image></a>
+      <a href="#"><image src='/university/img/net/twitter2.png'></image></a>
+      <a href="#"><image src='/university/img/net/google2.png'></image></a>
+    </p>
   </div>
 </div>
