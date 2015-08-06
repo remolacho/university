@@ -7,18 +7,22 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css(array('bootstrap.min'));
-		echo $this->Html->script(array('jquery-2.1.4.min.js'                           ,'masks','format','bootstrap.min'));
+		echo $this->Html->css(array('bootstrap.min','banner'));
+		echo $this->Html->script(array('jquery-2.1.4.min'                           ,'masks','format'
+			                           ,'bootstrap.min'
+			                           ,'jssor.slider.mini'
+			                           ,'banner'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header" class='col-12-md'>
+	<div id="container"  class="container">
+		<div id="header" class="page-header">
+		  <?php echo $this->element('header'); ?>
 		</div>
-		<div id="content" class="container">
+		<div id="content">
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>
