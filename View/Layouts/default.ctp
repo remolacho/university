@@ -23,18 +23,16 @@
 	?>
 </head>
 <body>
-	<div id="container">
+	<div id="wrap" class="container">
 		<div id="header">
 			<?php echo $this->element('header'); ?>
 		</div>
 		<div id="content">
-
 			<?php echo $this->Session->flash(); ?>
-
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<?php echo $this->element('footer'); ?>
 	</div>
+	<?php echo $this->element('footer'); ?>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
