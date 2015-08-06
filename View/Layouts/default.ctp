@@ -14,7 +14,7 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css(array('bootstrap.min'));
+		echo $this->Html->css(array('bootstrap.min','home'));
 		echo $this->Html->script(array('jquery-2.1.4.min.js'                           ,'masks','format','bootstrap.min'));
 
 		echo $this->fetch('meta');
@@ -33,8 +33,7 @@
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
-		</div>
+		<?php echo $this->element('footer'); ?>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
